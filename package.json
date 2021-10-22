@@ -1,25 +1,23 @@
 {
-  "name": "it122-f21-single-page-web-app",
+  "name": "wk02-basic-website",
   "version": "1.0.0",
   "description": "",
   "main": "app.js",
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/in43sh/it122-f21-single-page-web-app.git"
+    "url": "git+https://github.com/in43sh/wk02-basic-website.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/in43sh/it122-f21-single-page-web-app/issues"
+    "url": "https://github.com/in43sh/wk02-basic-website/issues"
   },
-  "homepage": "https://github.com/in43sh/it122-f21-single-page-web-app#readme",
+  "homepage": "https://github.com/in43sh/wk02-basic-website#readme",
   "dependencies": {
     "ejs": "^3.1.6",
     "express": "^4.17.1"
