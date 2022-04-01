@@ -32,6 +32,10 @@ app.get('/contact', (req, res) => {
   res.render('contact', {text: 'Contact Us'})
 });
 
+app.get('/dogs', (req, res) => {
+  res.render('dogs', {text: 'Dogs'})
+});
+
 // let listener = app.listen();
 // console.log(`Listening to port number ${listener.address().port}`);
 const server = app.listen( port, () => console.log(`Listening on port: ${port}`) );
