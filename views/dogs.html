@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dogs</title>
+    <style>
+      .image {
+        margin: 5px;
+      }
+
+      #breed {
+        text-align: center;
+        background-color: #cccccc;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>Randog</h1>
+    <button onclick="showDog()">Fetch Dog</button>
+    <h1 id="breed">lol</h1>
+    <img id="image" src=""/>
+    <script>
+      document.getElementById("breed").innerText = "dogBreed";
+      let dogBreed = "";
+      // extract breed name from url
+      const getBreedName = (url) => {
+        let parts = url.split("/");
+        return parts[parts.length - 2];
+      };
+
+      // Show info specific to the selected breed
+      const showDog = (e) => {
+        /*
+          fetch data for the selected breed
+          more info about response format is here - https://dog.ceo/dog-api/
+        */
+
+        fetch(`https://dog.ceo/api/breeds/image/random`)
+          .then((resp) => resp.json())
+          .then((data) => {
+            console.log(data);
+            console.log(getBreedName(data["message"]));
+            dogBreed = getBreedName(data["message"]);
+            dogImage = data["message"];
+            console.log("dogBreed ===> ", dogBreed);
+            document.getElementById("breed").innerText = dogBreed;
+            document.getElementById("image").src = dogImage;
+
+            // display breed name and image in the browser
+          });
+      };
+    </script>
+  </body>
+</html>
