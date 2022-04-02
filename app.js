@@ -5,6 +5,9 @@ const app = express();
 // app.set('port', process.env.PORT || 3000)
 const port = process.env.PORT || 3000;
 
+const path = require('path');
+const router = express.Router();
+
 // Static files
 app.use(express.static('public'));
 app.use('/css', express.static(__dirname + 'public/css'));
@@ -32,8 +35,15 @@ app.get('/contact', (req, res) => {
   res.render('contact', {text: 'Contact Us'})
 });
 
-app.get('/dogs', (req, res) => {
-  res.render('dogs', {text: 'Dogs'})
+// app.get('/dogs', (req, res) => {
+//   // res.render('dogs', {text: 'Dogs'})
+//   res.sendFile('dogs.html');
+// });
+
+app.get('/dogs',function(req,res){
+  console.log("path: " + path.join(__dirname, 'public/dogs.html'));
+  res.sendFile(path.join(__dirname+'/views/dogs.html'));
+  //__dirname : It will resolve to your project folder.
 });
 
 // let listener = app.listen();
