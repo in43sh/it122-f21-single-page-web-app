@@ -18,10 +18,8 @@
   </head>
 
   <body>
-    <h1>Randog</h1>
-    <button onclick="showDog()">Fetch Dog</button>
-
     <script>
+      let dogBreed = "";
       // extract breed name from url
       const getBreedName = (url) => {
         let parts = url.split("/");
@@ -40,10 +38,15 @@
           .then((data) => {
             console.log(data);
             console.log(getBreedName(data["message"]));
+            dogBreed = getBreedName(data["message"]);
+            console.log("dogBreed ===> ", dogBreed);
 
             // display breed name and image in the browser
           });
       };
     </script>
+    <h1>Randog</h1>
+    <button onclick="showDog()">Fetch Dog</button>
+    <h1><%= text %></h1>
   </body>
 </html>
